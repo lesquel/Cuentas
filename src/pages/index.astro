@@ -1,0 +1,33 @@
+---
+import Layout from "../components/layout.astro";
+import Card from "../components/Card.astro";
+import type { Datatypes } from "../types";
+const res = await fetch("http://localhost:4321/data/cuentas.json");
+const data: Datatypes[] = await res.json();
+---
+
+<Layout>
+  <article class="flex flex-wrap justify-center gap-8 my-10 items-center pb-20">
+    {
+      data.map((cuenta) => (
+        <Card name={cuenta.name} num={cuenta.num} img={cuenta.img} />
+      ))
+    }
+  </article>
+</Layout>
+
+<script>
+  const copyToClipboard = async (str) => {
+    try {
+      await navigator.clipboard.writeText(str);
+      console.log("copied");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  document.addEventListener("click", (e) => {
+    if (!e.target.matches("[data-copiar]")) return false;
+    copyToClipboard(e.target.dataset.copiar);
+  });
+  document.querySelectorAll("[data-copiar]");
+</script>

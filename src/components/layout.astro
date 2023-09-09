@@ -1,0 +1,38 @@
+---
+import HeaderImg from "./headerImg.astro"
+import Header from "./Header.astro"
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Datos</title>
+  </head>
+  <body class="bg-slate-950">
+
+    <Header/>
+
+      <main class="relative w-full max-w-[1000px] min-h-screen 
+      mx-auto px-5
+      flex flex-col justify-center">
+        <HeaderImg/>
+
+        <div class="w-full bg-slate-950 bg-opacity-95 z-20">
+            <slot/>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+  </body>
+</html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+    /* font-family: 'Creepster', cursive; */
+    @import url('https://fonts.googleapis.com/css2?family=Cousine&display=swap');
+    /* font-family: 'Cousine', monospace; */
+
+</style>
+
