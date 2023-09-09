@@ -2,7 +2,7 @@
 import Layout from "../components/layout.astro";
 import Card from "../components/Card.astro";
 import type { Datatypes } from "../types";
-const res = await fetch("http://localhost:4321/data/cuentas.json");
+const res = await fetch("data/cuentas.json");
 const data: Datatypes[] = await res.json();
 ---
 
