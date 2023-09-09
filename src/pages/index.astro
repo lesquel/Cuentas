@@ -2,7 +2,7 @@
 import Layout from "../components/layout.astro";
 import Card from "../components/Card.astro";
 import type { Datatypes } from "../types";
-const res = await fetch("data/cuentas.json");
+const res = await fetch("https://lesquel.github.io/jsonCuentas/cuentas.json");
 const data: Datatypes[] = await res.json();
 ---
 
@@ -17,7 +17,7 @@ const data: Datatypes[] = await res.json();
 </Layout>
 
 <script>
-  const copyToClipboard = async (str) => {
+  const copyToClipboard = async (str: string) => {
     try {
       await navigator.clipboard.writeText(str);
       console.log("copied");
