@@ -20,7 +20,6 @@ const data: Datatypes[] = await res.json();
   const copyToClipboard = async (str: string) => {
     try {
       await navigator.clipboard.writeText(str);
-      console.log("copied");
     } catch (error) {
       console.log(error);
     }
@@ -28,6 +27,11 @@ const data: Datatypes[] = await res.json();
   document.addEventListener("click", (e) => {
     if (!e.target.matches("[data-copiar]")) return false;
     copyToClipboard(e.target.dataset.copiar);
+    document.querySelector("#Alert")?.classList.add("scale-100")
+    setTimeout(() => {
+      document.querySelector("#Alert")?.classList.remove("scale-100")
+    }, 1500)
+    // document.querySelector("#Alert")?.setAttribute("style", "transform: scale(100)")
   });
   document.querySelectorAll("[data-copiar]");
 </script>

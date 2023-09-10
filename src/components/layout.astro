@@ -1,6 +1,7 @@
 ---
 import HeaderImg from "./headerImg.astro"
 import Header from "./Header.astro"
+import Alert from "./Alert.astro";
 ---
 <!doctype html>
 <html lang="en">
@@ -11,6 +12,7 @@ import Header from "./Header.astro"
     <title>Rivas Cedeno Diandra Kazaira</title>
   </head>
   <body class="bg-slate-950">
+    <Alert />
 
     <Header/>
 
@@ -19,7 +21,7 @@ import Header from "./Header.astro"
       flex flex-col justify-center">
         <HeaderImg/>
 
-        <div class="w-full bg-slate-950 bg-opacity-95 z-20">
+        <div class="w-full bg-slate-950 bg-opacity-50 backdrop-blur-xl z-20">
             <slot/>
         </div>
     </main>
